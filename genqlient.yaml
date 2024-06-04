@@ -1,0 +1,19 @@
+schema: schema.graphql
+operations:
+  - "./pkg/cloudflaregraphql/*.gql"
+generated: pkg/cloudflaregraphql/generated.go
+optional: pointer
+allow_broken_features: true
+bindings:
+  string:
+    type: string
+  Date:
+    type: string # 2006-01-02
+  Time:
+    type: time.Time # 2006-01-02T15:04:05Z
+  uint64:
+    type: uint64
+  uint32:
+    type: uint32
+  uint16:
+    type: uint16

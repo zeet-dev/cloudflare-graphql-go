@@ -1,0 +1,59 @@
+query GetWorkerAnalytics($zoneTag: string, $datetime: Time!) {
+  viewer {
+    zones(filter: { zoneTag: $zoneTag }) {
+      subrequestsData: workersZoneSubrequestsAdaptiveGroups(
+        limit: 10000
+        filter: { datetime_geq: $datetime }
+      ) {
+        sum {
+          subrequests
+        }
+
+        dimensions {
+          cacheStatus
+          datetimeHour
+        }
+      }
+
+      bandwidthData: workersZoneInvocationsAdaptiveGroups(
+        limit: 10000
+        filter: { datetime_geq: $datetime }
+      ) {
+        sum {
+          responseBodySize
+        }
+
+        dimensions {
+          datetimeHour
+        }
+      }
+
+      statusCodesData: workersZoneInvocationsAdaptiveGroups(
+        limit: 10000
+        filter: { datetime_geq: $datetime }
+      ) {
+        sum {
+          subrequests
+        }
+
+        dimensions {
+          httpResponseStatus
+          datetimeHour
+        }
+      }
+      totalRequestsData: workersZoneInvocationsAdaptiveGroups(
+        limit: 10000
+        filter: { datetime_geq: $datetime }
+      ) {
+        sum {
+          requests
+        }
+
+        dimensions {
+          status
+          datetimeHour
+        }
+      }
+    }
+  }
+}
