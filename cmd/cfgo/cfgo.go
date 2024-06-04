@@ -39,21 +39,39 @@ func main() {
 	for _, zone := range zones.Result {
 		zoneTag := zone.ID
 
-		currentDate := time.Now().UTC().Format("2006-01-02")
-		sinceDate := time.Now().UTC().AddDate(0, 0, -3).Format("2006-01-02")
-		result, err := client.GetZoneAnalyticsQuery(ctx, &zoneTag, sinceDate, currentDate)
+		// last 3 hours
+		currentTime := time.Now().UTC()
+		sinceTime := time.Now().UTC().Add(-time.Hour * 3)
+		result, err := client.GetZoneAnalyticsByHourQuery(ctx, &zoneTag, sinceTime, currentTime)
 		if err != nil {
 			log.Fatal(err)
 		}
 
 		log.Println("Zone Analytics Results:", zone.Name)
 		for _, zoneResult := range result.Viewer.Zones[0].Zones {
+			time := zoneResult.Dimensions.Timeslot
+			value := zoneResult.Sum.Requests
+			log.Printf("Time: %s, Requests: %d\n", time, value)
+		}
+
+		// last 3 days
+		currentDate := time.Now().UTC().Format("2006-01-02")
+		sinceDate := time.Now().UTC().AddDate(0, 0, -3).Format("2006-01-02")
+		dayResult, err := client.GetZoneAnalyticsByDayQuery(ctx, &zoneTag, sinceDate, currentDate)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		log.Println("Zone Analytics Results:", zone.Name)
+		for _, zoneResult := range dayResult.Viewer.Zones[0].Zones {
 			date := zoneResult.Dimensions.Timeslot
 			value := zoneResult.Sum.Requests
 			log.Printf("Date: %s, Requests: %d\n", date, value)
 		}
 
-		workerResult, err := client.GetWorkerAnalyticsQuery(ctx, &zoneTag, time.Now())
+		// last 3 hours
+		sinceTime = time.Now().UTC().Add(-time.Hour * 3)
+		workerResult, err := client.GetWorkerAnalyticsByHourQuery(ctx, &zoneTag, sinceTime)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -62,7 +80,7 @@ func main() {
 		for _, workerResult := range workerResult.Viewer.Zones[0].TotalRequestsData {
 			time := workerResult.Dimensions.DatetimeHour
 			value := workerResult.Sum.Requests
-			log.Printf("Date: %s, Requests: %d\n", time, value)
+			log.Printf("Time: %s, Requests: %d\n", time, value)
 		}
 	}
 }

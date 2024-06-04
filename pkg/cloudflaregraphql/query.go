@@ -4,27 +4,50 @@ import (
 	"context"
 	"log"
 	"time"
+
+	"github.com/samber/lo"
 )
 
-func (c *Client) GetZoneAnalyticsQuery(
+/*
+- free_tier supports 30 days
+*/
+func (c *Client) GetZoneAnalyticsByDayQuery(
 	ctx context.Context,
 	zoneTag *string,
 	since string,
 	until string,
-) (*GetZoneAnalyticsResponse, error) {
+) (*GetZoneAnalyticsByDayResponse, error) {
 	if c.opt.Debug {
-		log.Println("GetZoneAnalyticsQuery", zoneTag, since, until)
+		log.Println("GetZoneAnalyticsByDayQuery", zoneTag, since, until)
 	}
-	return GetZoneAnalyticsQuery(ctx, c.gqlV4, zoneTag, since, until)
+	return GetZoneAnalyticsByDayQuery(ctx, c.gqlV4, zoneTag, since, until)
 }
 
-func (c *Client) GetWorkerAnalyticsQuery(
+/*
+- free_tier supports 24 hours
+*/
+func (c *Client) GetZoneAnalyticsByHourQuery(
 	ctx context.Context,
 	zoneTag *string,
-	datetime time.Time,
-) (*GetWorkerAnalyticsResponse, error) {
+	since time.Time,
+	until time.Time,
+) (*GetZoneAnalyticsByHourResponse, error) {
 	if c.opt.Debug {
-		log.Println("GetWorkerAnalyticsQuery", zoneTag, datetime)
+		log.Println("GetZoneAnalyticsByHourQuery", zoneTag, since, until)
 	}
-	return GetWorkerAnalyticsQuery(ctx, c.gqlV4, zoneTag, datetime)
+	return GetZoneAnalyticsByHourQuery(ctx, c.gqlV4, zoneTag, lo.ToPtr(since.UTC()), lo.ToPtr(until.UTC()))
+}
+
+/*
+- free_tier supports 30 days
+*/
+func (c *Client) GetWorkerAnalyticsByHourQuery(
+	ctx context.Context,
+	zoneTag *string,
+	since time.Time,
+) (*GetWorkerAnalyticsByHourResponse, error) {
+	if c.opt.Debug {
+		log.Println("GetWorkerAnalyticsByHourQuery", zoneTag, since)
+	}
+	return GetWorkerAnalyticsByHourQuery(ctx, c.gqlV4, zoneTag, since.UTC())
 }

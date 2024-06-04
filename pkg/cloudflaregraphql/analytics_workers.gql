@@ -1,4 +1,4 @@
-query GetWorkerAnalytics($zoneTag: string, $datetime: Time!) {
+query GetWorkerAnalyticsByHour($zoneTag: string, $datetime: Time!) {
   viewer {
     zones(filter: { zoneTag: $zoneTag }) {
       subrequestsData: workersZoneSubrequestsAdaptiveGroups(

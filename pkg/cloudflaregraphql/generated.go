@@ -9,483 +9,489 @@ import (
 	"github.com/Khan/genqlient/graphql"
 )
 
-// GetWorkerAnalyticsResponse is returned by GetWorkerAnalytics on success.
-type GetWorkerAnalyticsResponse struct {
-	Viewer *GetWorkerAnalyticsViewer `json:"viewer,omitempty"`
+// GetWorkerAnalyticsByHourResponse is returned by GetWorkerAnalyticsByHour on success.
+type GetWorkerAnalyticsByHourResponse struct {
+	Viewer *GetWorkerAnalyticsByHourViewer `json:"viewer,omitempty"`
 }
 
-// GetViewer returns GetWorkerAnalyticsResponse.Viewer, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsResponse) GetViewer() *GetWorkerAnalyticsViewer { return v.Viewer }
-
-// GetWorkerAnalyticsViewer includes the requested fields of the GraphQL type viewer.
-type GetWorkerAnalyticsViewer struct {
-	Zones []GetWorkerAnalyticsViewerZonesZone `json:"zones,omitempty"`
+// GetViewer returns GetWorkerAnalyticsByHourResponse.Viewer, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourResponse) GetViewer() *GetWorkerAnalyticsByHourViewer {
+	return v.Viewer
 }
 
-// GetZones returns GetWorkerAnalyticsViewer.Zones, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewer) GetZones() []GetWorkerAnalyticsViewerZonesZone { return v.Zones }
+// GetWorkerAnalyticsByHourViewer includes the requested fields of the GraphQL type viewer.
+type GetWorkerAnalyticsByHourViewer struct {
+	Zones []GetWorkerAnalyticsByHourViewerZonesZone `json:"zones,omitempty"`
+}
 
-// GetWorkerAnalyticsViewerZonesZone includes the requested fields of the GraphQL type zone.
-type GetWorkerAnalyticsViewerZonesZone struct {
+// GetZones returns GetWorkerAnalyticsByHourViewer.Zones, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewer) GetZones() []GetWorkerAnalyticsByHourViewerZonesZone {
+	return v.Zones
+}
+
+// GetWorkerAnalyticsByHourViewerZonesZone includes the requested fields of the GraphQL type zone.
+type GetWorkerAnalyticsByHourViewerZonesZone struct {
 	// Workers subrequests with adaptive sampling
-	SubrequestsData []GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups `json:"subrequestsData,omitempty"`
+	SubrequestsData []GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups `json:"subrequestsData,omitempty"`
 	// Workers invocations with adaptive sampling
-	BandwidthData []GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups `json:"bandwidthData,omitempty"`
+	BandwidthData []GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups `json:"bandwidthData,omitempty"`
 	// Workers invocations with adaptive sampling
-	StatusCodesData []GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups `json:"statusCodesData,omitempty"`
+	StatusCodesData []GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups `json:"statusCodesData,omitempty"`
 	// Workers invocations with adaptive sampling
-	TotalRequestsData []GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups `json:"totalRequestsData,omitempty"`
+	TotalRequestsData []GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups `json:"totalRequestsData,omitempty"`
 }
 
-// GetSubrequestsData returns GetWorkerAnalyticsViewerZonesZone.SubrequestsData, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZone) GetSubrequestsData() []GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups {
+// GetSubrequestsData returns GetWorkerAnalyticsByHourViewerZonesZone.SubrequestsData, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZone) GetSubrequestsData() []GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups {
 	return v.SubrequestsData
 }
 
-// GetBandwidthData returns GetWorkerAnalyticsViewerZonesZone.BandwidthData, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZone) GetBandwidthData() []GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups {
+// GetBandwidthData returns GetWorkerAnalyticsByHourViewerZonesZone.BandwidthData, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZone) GetBandwidthData() []GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups {
 	return v.BandwidthData
 }
 
-// GetStatusCodesData returns GetWorkerAnalyticsViewerZonesZone.StatusCodesData, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZone) GetStatusCodesData() []GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups {
+// GetStatusCodesData returns GetWorkerAnalyticsByHourViewerZonesZone.StatusCodesData, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZone) GetStatusCodesData() []GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups {
 	return v.StatusCodesData
 }
 
-// GetTotalRequestsData returns GetWorkerAnalyticsViewerZonesZone.TotalRequestsData, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZone) GetTotalRequestsData() []GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups {
+// GetTotalRequestsData returns GetWorkerAnalyticsByHourViewerZonesZone.TotalRequestsData, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZone) GetTotalRequestsData() []GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups {
 	return v.TotalRequestsData
 }
 
-// GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroups.
+// GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroups.
 // The GraphQL type's documentation follows.
 //
 // Workers invocations with adaptive sampling
-type GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups struct {
+type GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups struct {
 	// The sum of values for a metric per dimension
-	Sum *GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum `json:"sum,omitempty"`
+	Sum *GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum `json:"sum,omitempty"`
 	// List of dimensions to group by
-	Dimensions *GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions `json:"dimensions,omitempty"`
+	Dimensions *GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions `json:"dimensions,omitempty"`
 }
 
-// GetSum returns GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups.Sum, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups) GetSum() *GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum {
+// GetSum returns GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups.Sum, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups) GetSum() *GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum {
 	return v.Sum
 }
 
-// GetDimensions returns GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups.Dimensions, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups) GetDimensions() *GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions {
+// GetDimensions returns GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups.Dimensions, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroups) GetDimensions() *GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions {
 	return v.Dimensions
 }
 
-// GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.
-type GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions struct {
+// GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.
+type GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions struct {
 	// Request datetime, truncated to start of an hour
 	DatetimeHour time.Time `json:"datetimeHour"`
 }
 
-// GetDatetimeHour returns GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.DatetimeHour, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetDatetimeHour() time.Time {
+// GetDatetimeHour returns GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.DatetimeHour, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetDatetimeHour() time.Time {
 	return v.DatetimeHour
 }
 
-// GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsSum.
-type GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum struct {
+// GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsSum.
+type GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum struct {
 	// Bandwidth (in bytes) returned to eyeball
 	ResponseBodySize uint64 `json:"responseBodySize"`
 }
 
-// GetResponseBodySize returns GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum.ResponseBodySize, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum) GetResponseBodySize() uint64 {
+// GetResponseBodySize returns GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum.ResponseBodySize, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneBandwidthDataZoneWorkersZoneInvocationsAdaptiveGroupsSum) GetResponseBodySize() uint64 {
 	return v.ResponseBodySize
 }
 
-// GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroups.
+// GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroups.
 // The GraphQL type's documentation follows.
 //
 // Workers invocations with adaptive sampling
-type GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups struct {
+type GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups struct {
 	// The sum of values for a metric per dimension
-	Sum *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum `json:"sum,omitempty"`
+	Sum *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum `json:"sum,omitempty"`
 	// List of dimensions to group by
-	Dimensions *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions `json:"dimensions,omitempty"`
+	Dimensions *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions `json:"dimensions,omitempty"`
 }
 
-// GetSum returns GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups.Sum, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups) GetSum() *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum {
+// GetSum returns GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups.Sum, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups) GetSum() *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum {
 	return v.Sum
 }
 
-// GetDimensions returns GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups.Dimensions, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups) GetDimensions() *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions {
+// GetDimensions returns GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups.Dimensions, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroups) GetDimensions() *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions {
 	return v.Dimensions
 }
 
-// GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.
-type GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions struct {
+// GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.
+type GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions struct {
 	// Origin HTTP response code
 	HttpResponseStatus uint16 `json:"httpResponseStatus"`
 	// Request datetime, truncated to start of an hour
 	DatetimeHour time.Time `json:"datetimeHour"`
 }
 
-// GetHttpResponseStatus returns GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.HttpResponseStatus, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetHttpResponseStatus() uint16 {
+// GetHttpResponseStatus returns GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.HttpResponseStatus, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetHttpResponseStatus() uint16 {
 	return v.HttpResponseStatus
 }
 
-// GetDatetimeHour returns GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.DatetimeHour, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetDatetimeHour() time.Time {
+// GetDatetimeHour returns GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.DatetimeHour, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetDatetimeHour() time.Time {
 	return v.DatetimeHour
 }
 
-// GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsSum.
-type GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum struct {
+// GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsSum.
+type GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum struct {
 	// Number of sub-requests issued by the edge worker
 	Subrequests uint64 `json:"subrequests"`
 }
 
-// GetSubrequests returns GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum.Subrequests, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum) GetSubrequests() uint64 {
+// GetSubrequests returns GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum.Subrequests, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneStatusCodesDataZoneWorkersZoneInvocationsAdaptiveGroupsSum) GetSubrequests() uint64 {
 	return v.Subrequests
 }
 
-// GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups includes the requested fields of the GraphQL type ZoneWorkersZoneSubrequestsAdaptiveGroups.
+// GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups includes the requested fields of the GraphQL type ZoneWorkersZoneSubrequestsAdaptiveGroups.
 // The GraphQL type's documentation follows.
 //
 // Workers subrequests with adaptive sampling
-type GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups struct {
+type GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups struct {
 	// The sum of values for a metric per dimension
-	Sum *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum `json:"sum,omitempty"`
+	Sum *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum `json:"sum,omitempty"`
 	// List of dimensions to group by
-	Dimensions *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions `json:"dimensions,omitempty"`
+	Dimensions *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions `json:"dimensions,omitempty"`
 }
 
-// GetSum returns GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups.Sum, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups) GetSum() *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum {
+// GetSum returns GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups.Sum, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups) GetSum() *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum {
 	return v.Sum
 }
 
-// GetDimensions returns GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups.Dimensions, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups) GetDimensions() *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions {
+// GetDimensions returns GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups.Dimensions, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroups) GetDimensions() *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions {
 	return v.Dimensions
 }
 
-// GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions includes the requested fields of the GraphQL type ZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions.
-type GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions struct {
+// GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions includes the requested fields of the GraphQL type ZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions.
+type GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions struct {
 	// Cache status
 	CacheStatus uint64 `json:"cacheStatus"`
 	// Request datetime, truncated to start of an hour
 	DatetimeHour time.Time `json:"datetimeHour"`
 }
 
-// GetCacheStatus returns GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions.CacheStatus, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions) GetCacheStatus() uint64 {
+// GetCacheStatus returns GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions.CacheStatus, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions) GetCacheStatus() uint64 {
 	return v.CacheStatus
 }
 
-// GetDatetimeHour returns GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions.DatetimeHour, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions) GetDatetimeHour() time.Time {
+// GetDatetimeHour returns GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions.DatetimeHour, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsDimensions) GetDatetimeHour() time.Time {
 	return v.DatetimeHour
 }
 
-// GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum includes the requested fields of the GraphQL type ZoneWorkersZoneSubrequestsAdaptiveGroupsSum.
-type GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum struct {
+// GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum includes the requested fields of the GraphQL type ZoneWorkersZoneSubrequestsAdaptiveGroupsSum.
+type GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum struct {
 	// Number of subrequests issued by a worker
 	Subrequests uint64 `json:"subrequests"`
 }
 
-// GetSubrequests returns GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum.Subrequests, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum) GetSubrequests() uint64 {
+// GetSubrequests returns GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum.Subrequests, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneSubrequestsDataZoneWorkersZoneSubrequestsAdaptiveGroupsSum) GetSubrequests() uint64 {
 	return v.Subrequests
 }
 
-// GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroups.
+// GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroups.
 // The GraphQL type's documentation follows.
 //
 // Workers invocations with adaptive sampling
-type GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups struct {
+type GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups struct {
 	// The sum of values for a metric per dimension
-	Sum *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum `json:"sum,omitempty"`
+	Sum *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum `json:"sum,omitempty"`
 	// List of dimensions to group by
-	Dimensions *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions `json:"dimensions,omitempty"`
+	Dimensions *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions `json:"dimensions,omitempty"`
 }
 
-// GetSum returns GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups.Sum, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups) GetSum() *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum {
+// GetSum returns GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups.Sum, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups) GetSum() *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum {
 	return v.Sum
 }
 
-// GetDimensions returns GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups.Dimensions, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups) GetDimensions() *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions {
+// GetDimensions returns GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups.Dimensions, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroups) GetDimensions() *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions {
 	return v.Dimensions
 }
 
-// GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.
-type GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions struct {
+// GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.
+type GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions struct {
 	// Status of the worker invocation
 	Status string `json:"status"`
 	// Request datetime, truncated to start of an hour
 	DatetimeHour time.Time `json:"datetimeHour"`
 }
 
-// GetStatus returns GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.Status, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetStatus() string {
+// GetStatus returns GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.Status, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetStatus() string {
 	return v.Status
 }
 
-// GetDatetimeHour returns GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.DatetimeHour, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetDatetimeHour() time.Time {
+// GetDatetimeHour returns GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions.DatetimeHour, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsDimensions) GetDatetimeHour() time.Time {
 	return v.DatetimeHour
 }
 
-// GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsSum.
-type GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum struct {
+// GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum includes the requested fields of the GraphQL type ZoneWorkersZoneInvocationsAdaptiveGroupsSum.
+type GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum struct {
 	// Sum of Requests
 	Requests uint64 `json:"requests"`
 }
 
-// GetRequests returns GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum.Requests, and is useful for accessing the field via an interface.
-func (v *GetWorkerAnalyticsViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum) GetRequests() uint64 {
+// GetRequests returns GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum.Requests, and is useful for accessing the field via an interface.
+func (v *GetWorkerAnalyticsByHourViewerZonesZoneTotalRequestsDataZoneWorkersZoneInvocationsAdaptiveGroupsSum) GetRequests() uint64 {
 	return v.Requests
 }
 
-// GetZoneAnalyticsResponse is returned by GetZoneAnalytics on success.
-type GetZoneAnalyticsResponse struct {
-	Viewer *GetZoneAnalyticsViewer `json:"viewer,omitempty"`
+// GetZoneAnalyticsByDayResponse is returned by GetZoneAnalyticsByDay on success.
+type GetZoneAnalyticsByDayResponse struct {
+	Viewer *GetZoneAnalyticsByDayViewer `json:"viewer,omitempty"`
 }
 
-// GetViewer returns GetZoneAnalyticsResponse.Viewer, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsResponse) GetViewer() *GetZoneAnalyticsViewer { return v.Viewer }
+// GetViewer returns GetZoneAnalyticsByDayResponse.Viewer, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayResponse) GetViewer() *GetZoneAnalyticsByDayViewer { return v.Viewer }
 
-// GetZoneAnalyticsViewer includes the requested fields of the GraphQL type viewer.
-type GetZoneAnalyticsViewer struct {
-	Zones []GetZoneAnalyticsViewerZonesZone `json:"zones,omitempty"`
+// GetZoneAnalyticsByDayViewer includes the requested fields of the GraphQL type viewer.
+type GetZoneAnalyticsByDayViewer struct {
+	Zones []GetZoneAnalyticsByDayViewerZonesZone `json:"zones,omitempty"`
 }
 
-// GetZones returns GetZoneAnalyticsViewer.Zones, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewer) GetZones() []GetZoneAnalyticsViewerZonesZone { return v.Zones }
-
-// GetZoneAnalyticsViewerZonesZone includes the requested fields of the GraphQL type zone.
-type GetZoneAnalyticsViewerZonesZone struct {
-	// Daily rollups of request data
-	Totals []GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroups `json:"totals,omitempty"`
-	// Daily rollups of request data
-	Zones []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups `json:"zones,omitempty"`
-}
-
-// GetTotals returns GetZoneAnalyticsViewerZonesZone.Totals, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZone) GetTotals() []GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroups {
-	return v.Totals
-}
-
-// GetZones returns GetZoneAnalyticsViewerZonesZone.Zones, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZone) GetZones() []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups {
+// GetZones returns GetZoneAnalyticsByDayViewer.Zones, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewer) GetZones() []GetZoneAnalyticsByDayViewerZonesZone {
 	return v.Zones
 }
 
-// GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroups includes the requested fields of the GraphQL type ZoneHttpRequests1dGroups.
+// GetZoneAnalyticsByDayViewerZonesZone includes the requested fields of the GraphQL type zone.
+type GetZoneAnalyticsByDayViewerZonesZone struct {
+	// Daily rollups of request data
+	Totals []GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroups `json:"totals,omitempty"`
+	// Daily rollups of request data
+	Zones []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups `json:"zones,omitempty"`
+}
+
+// GetTotals returns GetZoneAnalyticsByDayViewerZonesZone.Totals, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZone) GetTotals() []GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroups {
+	return v.Totals
+}
+
+// GetZones returns GetZoneAnalyticsByDayViewerZonesZone.Zones, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZone) GetZones() []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups {
+	return v.Zones
+}
+
+// GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroups includes the requested fields of the GraphQL type ZoneHttpRequests1dGroups.
 // The GraphQL type's documentation follows.
 //
 // Daily rollups of request data
-type GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroups struct {
+type GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroups struct {
 	// The number of unique values for a metric per dimension
-	Uniq *GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq `json:"uniq,omitempty"`
+	Uniq *GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq `json:"uniq,omitempty"`
 }
 
-// GetUniq returns GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroups.Uniq, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroups) GetUniq() *GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq {
+// GetUniq returns GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroups.Uniq, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroups) GetUniq() *GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq {
 	return v.Uniq
 }
 
-// GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsUniq.
-type GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq struct {
+// GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsUniq.
+type GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq struct {
 	// A number of unique IPs
 	Uniques uint64 `json:"uniques"`
 }
 
-// GetUniques returns GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq.Uniques, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq) GetUniques() uint64 {
+// GetUniques returns GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq.Uniques, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneTotalsZoneHttpRequests1dGroupsUniq) GetUniques() uint64 {
 	return v.Uniques
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups includes the requested fields of the GraphQL type ZoneHttpRequests1dGroups.
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups includes the requested fields of the GraphQL type ZoneHttpRequests1dGroups.
 // The GraphQL type's documentation follows.
 //
 // Daily rollups of request data
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups struct {
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups struct {
 	// List of dimensions to group by
-	Dimensions *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions `json:"dimensions,omitempty"`
+	Dimensions *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions `json:"dimensions,omitempty"`
 	// The number of unique values for a metric per dimension
-	Uniq *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq `json:"uniq,omitempty"`
+	Uniq *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq `json:"uniq,omitempty"`
 	// The sum of values for a metric per dimension
-	Sum *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum `json:"sum,omitempty"`
+	Sum *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum `json:"sum,omitempty"`
 }
 
-// GetDimensions returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups.Dimensions, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups) GetDimensions() *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions {
+// GetDimensions returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups.Dimensions, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups) GetDimensions() *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions {
 	return v.Dimensions
 }
 
-// GetUniq returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups.Uniq, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups) GetUniq() *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq {
+// GetUniq returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups.Uniq, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups) GetUniq() *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq {
 	return v.Uniq
 }
 
-// GetSum returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups.Sum, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroups) GetSum() *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum {
+// GetSum returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups.Sum, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroups) GetSum() *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum {
 	return v.Sum
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsDimensions.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsDimensions.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions struct {
 	// Request date
 	Timeslot string `json:"timeslot"`
 }
 
-// GetTimeslot returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions.Timeslot, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions) GetTimeslot() string {
+// GetTimeslot returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions.Timeslot, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsDimensions) GetTimeslot() string {
 	return v.Timeslot
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsSum.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum struct {
-	BrowserMap []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem `json:"browserMap,omitempty"`
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsSum.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum struct {
+	BrowserMap []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem `json:"browserMap,omitempty"`
 	// Bytes returned to client
 	Bytes uint64 `json:"bytes"`
 	// Bytes returned to client from cache
 	CachedBytes uint64 `json:"cachedBytes"`
 	// Requests served from cache
-	CachedRequests uint64                                                                                                                    `json:"cachedRequests"`
-	ContentTypeMap []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem `json:"contentTypeMap,omitempty"`
-	ClientSSLMap   []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem     `json:"clientSSLMap,omitempty"`
-	CountryMap     []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem         `json:"countryMap,omitempty"`
+	CachedRequests uint64                                                                                                                         `json:"cachedRequests"`
+	ContentTypeMap []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem `json:"contentTypeMap,omitempty"`
+	ClientSSLMap   []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem     `json:"clientSSLMap,omitempty"`
+	CountryMap     []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem         `json:"countryMap,omitempty"`
 	// Bytes returned to client using SSL/TLS protocol
 	EncryptedBytes uint64 `json:"encryptedBytes"`
 	// Requests served using SSL/TLS protocol
-	EncryptedRequests uint64                                                                                                            `json:"encryptedRequests"`
-	IpClassMap        []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem `json:"ipClassMap,omitempty"`
+	EncryptedRequests uint64                                                                                                                 `json:"encryptedRequests"`
+	IpClassMap        []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem `json:"ipClassMap,omitempty"`
 	// Successful requests for HTML content
-	PageViews         uint64                                                                                                                          `json:"pageViews"`
-	Requests          uint64                                                                                                                          `json:"requests"`
-	ResponseStatusMap []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem `json:"responseStatusMap,omitempty"`
+	PageViews         uint64                                                                                                                               `json:"pageViews"`
+	Requests          uint64                                                                                                                               `json:"requests"`
+	ResponseStatusMap []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem `json:"responseStatusMap,omitempty"`
 	// Requests classified as threats
-	Threats          uint64                                                                                                                        `json:"threats"`
-	ThreatPathingMap []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem `json:"threatPathingMap,omitempty"`
+	Threats          uint64                                                                                                                             `json:"threats"`
+	ThreatPathingMap []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem `json:"threatPathingMap,omitempty"`
 }
 
-// GetBrowserMap returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.BrowserMap, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetBrowserMap() []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem {
+// GetBrowserMap returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.BrowserMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetBrowserMap() []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem {
 	return v.BrowserMap
 }
 
-// GetBytes returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.Bytes, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetBytes() uint64 {
+// GetBytes returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.Bytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetBytes() uint64 {
 	return v.Bytes
 }
 
-// GetCachedBytes returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.CachedBytes, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetCachedBytes() uint64 {
+// GetCachedBytes returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.CachedBytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetCachedBytes() uint64 {
 	return v.CachedBytes
 }
 
-// GetCachedRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.CachedRequests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetCachedRequests() uint64 {
+// GetCachedRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.CachedRequests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetCachedRequests() uint64 {
 	return v.CachedRequests
 }
 
-// GetContentTypeMap returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.ContentTypeMap, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetContentTypeMap() []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem {
+// GetContentTypeMap returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.ContentTypeMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetContentTypeMap() []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem {
 	return v.ContentTypeMap
 }
 
-// GetClientSSLMap returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.ClientSSLMap, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetClientSSLMap() []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem {
+// GetClientSSLMap returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.ClientSSLMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetClientSSLMap() []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem {
 	return v.ClientSSLMap
 }
 
-// GetCountryMap returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.CountryMap, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetCountryMap() []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem {
+// GetCountryMap returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.CountryMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetCountryMap() []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem {
 	return v.CountryMap
 }
 
-// GetEncryptedBytes returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.EncryptedBytes, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetEncryptedBytes() uint64 {
+// GetEncryptedBytes returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.EncryptedBytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetEncryptedBytes() uint64 {
 	return v.EncryptedBytes
 }
 
-// GetEncryptedRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.EncryptedRequests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetEncryptedRequests() uint64 {
+// GetEncryptedRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.EncryptedRequests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetEncryptedRequests() uint64 {
 	return v.EncryptedRequests
 }
 
-// GetIpClassMap returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.IpClassMap, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetIpClassMap() []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem {
+// GetIpClassMap returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.IpClassMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetIpClassMap() []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem {
 	return v.IpClassMap
 }
 
-// GetPageViews returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.PageViews, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetPageViews() uint64 {
+// GetPageViews returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.PageViews, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetPageViews() uint64 {
 	return v.PageViews
 }
 
-// GetRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.Requests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetRequests() uint64 {
+// GetRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetRequests() uint64 {
 	return v.Requests
 }
 
-// GetResponseStatusMap returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.ResponseStatusMap, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetResponseStatusMap() []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem {
+// GetResponseStatusMap returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.ResponseStatusMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetResponseStatusMap() []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem {
 	return v.ResponseStatusMap
 }
 
-// GetThreats returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.Threats, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetThreats() uint64 {
+// GetThreats returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.Threats, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetThreats() uint64 {
 	return v.Threats
 }
 
-// GetThreatPathingMap returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.ThreatPathingMap, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetThreatPathingMap() []GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem {
+// GetThreatPathingMap returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum.ThreatPathingMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSum) GetThreatPathingMap() []GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem {
 	return v.ThreatPathingMap
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsBrowserMapElem.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsBrowserMapElem.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem struct {
 	// Successful requests for HTML content
 	PageViews uint64 `json:"pageViews"`
 	// Browser type
 	Key string `json:"key"`
 }
 
-// GetPageViews returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem.PageViews, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem) GetPageViews() uint64 {
+// GetPageViews returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem.PageViews, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem) GetPageViews() uint64 {
 	return v.PageViews
 }
 
-// GetKey returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem.Key, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem) GetKey() string {
+// GetKey returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumBrowserMapZoneHttpRequests1dGroupsBrowserMapElem) GetKey() string {
 	return v.Key
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsClientSSLMapElem.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsClientSSLMapElem.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem struct {
 	Requests uint64 `json:"requests"`
 	// Protocol version
 	Key string `json:"key"`
 }
 
-// GetRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem.Requests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem) GetRequests() uint64 {
+// GetRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem) GetRequests() uint64 {
 	return v.Requests
 }
 
-// GetKey returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem.Key, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem) GetKey() string {
+// GetKey returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumClientSSLMapZoneHttpRequests1dGroupsClientSSLMapElem) GetKey() string {
 	return v.Key
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsContentTypeMapElem.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsContentTypeMapElem.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem struct {
 	// Bytes returned to client
 	Bytes    uint64 `json:"bytes"`
 	Requests uint64 `json:"requests"`
@@ -493,23 +499,23 @@ type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeM
 	Key string `json:"key"`
 }
 
-// GetBytes returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem.Bytes, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem) GetBytes() uint64 {
+// GetBytes returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem.Bytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem) GetBytes() uint64 {
 	return v.Bytes
 }
 
-// GetRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem.Requests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem) GetRequests() uint64 {
+// GetRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem) GetRequests() uint64 {
 	return v.Requests
 }
 
-// GetKey returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem.Key, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem) GetKey() string {
+// GetKey returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumContentTypeMapZoneHttpRequests1dGroupsContentTypeMapElem) GetKey() string {
 	return v.Key
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsCountryMapElem.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsCountryMapElem.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem struct {
 	// Bytes returned to client
 	Bytes    uint64 `json:"bytes"`
 	Requests uint64 `json:"requests"`
@@ -519,119 +525,488 @@ type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZo
 	Key string `json:"key"`
 }
 
-// GetBytes returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem.Bytes, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem) GetBytes() uint64 {
+// GetBytes returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem.Bytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem) GetBytes() uint64 {
 	return v.Bytes
 }
 
-// GetRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem.Requests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem) GetRequests() uint64 {
+// GetRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem) GetRequests() uint64 {
 	return v.Requests
 }
 
-// GetThreats returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem.Threats, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem) GetThreats() uint64 {
+// GetThreats returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem.Threats, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem) GetThreats() uint64 {
 	return v.Threats
 }
 
-// GetKey returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem.Key, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem) GetKey() string {
+// GetKey returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumCountryMapZoneHttpRequests1dGroupsCountryMapElem) GetKey() string {
 	return v.Key
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsIpClassMapElem.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsIpClassMapElem.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem struct {
 	Requests uint64 `json:"requests"`
 	// IP class
 	Key string `json:"key"`
 }
 
-// GetRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem.Requests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem) GetRequests() uint64 {
+// GetRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem) GetRequests() uint64 {
 	return v.Requests
 }
 
-// GetKey returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem.Key, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem) GetKey() string {
+// GetKey returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumIpClassMapZoneHttpRequests1dGroupsIpClassMapElem) GetKey() string {
 	return v.Key
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsResponseStatusMapElem.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsResponseStatusMapElem.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem struct {
 	Requests uint64 `json:"requests"`
 	// HTTP response status code returned to client
 	Key uint64 `json:"key"`
 }
 
-// GetRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem.Requests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem) GetRequests() uint64 {
+// GetRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem) GetRequests() uint64 {
 	return v.Requests
 }
 
-// GetKey returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem.Key, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem) GetKey() uint64 {
+// GetKey returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumResponseStatusMapZoneHttpRequests1dGroupsResponseStatusMapElem) GetKey() uint64 {
 	return v.Key
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsThreatPathingMapElem.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsThreatPathingMapElem.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem struct {
 	Requests uint64 `json:"requests"`
 	// Threat type
 	Key string `json:"key"`
 }
 
-// GetRequests returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem.Requests, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem) GetRequests() uint64 {
+// GetRequests returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem) GetRequests() uint64 {
 	return v.Requests
 }
 
-// GetKey returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem.Key, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem) GetKey() string {
+// GetKey returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsSumThreatPathingMapZoneHttpRequests1dGroupsThreatPathingMapElem) GetKey() string {
 	return v.Key
 }
 
-// GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsUniq.
-type GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq struct {
+// GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq includes the requested fields of the GraphQL type ZoneHttpRequests1dGroupsUniq.
+type GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq struct {
 	// A number of unique IPs
 	Uniques uint64 `json:"uniques"`
 }
 
-// GetUniques returns GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq.Uniques, and is useful for accessing the field via an interface.
-func (v *GetZoneAnalyticsViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq) GetUniques() uint64 {
+// GetUniques returns GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq.Uniques, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByDayViewerZonesZoneZonesZoneHttpRequests1dGroupsUniq) GetUniques() uint64 {
 	return v.Uniques
 }
 
-// __GetWorkerAnalyticsInput is used internally by genqlient
-type __GetWorkerAnalyticsInput struct {
+// GetZoneAnalyticsByHourResponse is returned by GetZoneAnalyticsByHour on success.
+type GetZoneAnalyticsByHourResponse struct {
+	Viewer *GetZoneAnalyticsByHourViewer `json:"viewer,omitempty"`
+}
+
+// GetViewer returns GetZoneAnalyticsByHourResponse.Viewer, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourResponse) GetViewer() *GetZoneAnalyticsByHourViewer { return v.Viewer }
+
+// GetZoneAnalyticsByHourViewer includes the requested fields of the GraphQL type viewer.
+type GetZoneAnalyticsByHourViewer struct {
+	Zones []GetZoneAnalyticsByHourViewerZonesZone `json:"zones,omitempty"`
+}
+
+// GetZones returns GetZoneAnalyticsByHourViewer.Zones, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewer) GetZones() []GetZoneAnalyticsByHourViewerZonesZone {
+	return v.Zones
+}
+
+// GetZoneAnalyticsByHourViewerZonesZone includes the requested fields of the GraphQL type zone.
+type GetZoneAnalyticsByHourViewerZonesZone struct {
+	// Hourly rollups of request data
+	Totals []GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroups `json:"totals,omitempty"`
+	// Hourly rollups of request data
+	Zones []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups `json:"zones,omitempty"`
+}
+
+// GetTotals returns GetZoneAnalyticsByHourViewerZonesZone.Totals, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZone) GetTotals() []GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroups {
+	return v.Totals
+}
+
+// GetZones returns GetZoneAnalyticsByHourViewerZonesZone.Zones, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZone) GetZones() []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups {
+	return v.Zones
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroups includes the requested fields of the GraphQL type ZoneHttpRequests1hGroups.
+// The GraphQL type's documentation follows.
+//
+// Hourly rollups of request data
+type GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroups struct {
+	// The number of unique values for a metric per dimension
+	Uniq *GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroupsUniq `json:"uniq,omitempty"`
+}
+
+// GetUniq returns GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroups.Uniq, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroups) GetUniq() *GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroupsUniq {
+	return v.Uniq
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroupsUniq includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsUniq.
+type GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroupsUniq struct {
+	// A number of unique IPs
+	Uniques uint64 `json:"uniques"`
+}
+
+// GetUniques returns GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroupsUniq.Uniques, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneTotalsZoneHttpRequests1hGroupsUniq) GetUniques() uint64 {
+	return v.Uniques
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups includes the requested fields of the GraphQL type ZoneHttpRequests1hGroups.
+// The GraphQL type's documentation follows.
+//
+// Hourly rollups of request data
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups struct {
+	// List of dimensions to group by
+	Dimensions *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsDimensions `json:"dimensions,omitempty"`
+	// The number of unique values for a metric per dimension
+	Uniq *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsUniq `json:"uniq,omitempty"`
+	// The sum of values for a metric per dimension
+	Sum *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum `json:"sum,omitempty"`
+}
+
+// GetDimensions returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups.Dimensions, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups) GetDimensions() *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsDimensions {
+	return v.Dimensions
+}
+
+// GetUniq returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups.Uniq, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups) GetUniq() *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsUniq {
+	return v.Uniq
+}
+
+// GetSum returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups.Sum, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroups) GetSum() *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum {
+	return v.Sum
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsDimensions includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsDimensions.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsDimensions struct {
+	// Request datetime truncated to the hour
+	Timeslot time.Time `json:"timeslot"`
+}
+
+// GetTimeslot returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsDimensions.Timeslot, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsDimensions) GetTimeslot() time.Time {
+	return v.Timeslot
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsSum.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum struct {
+	BrowserMap []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumBrowserMapZoneHttpRequests1hGroupsBrowserMapElem `json:"browserMap,omitempty"`
+	// Bytes returned to client
+	Bytes uint64 `json:"bytes"`
+	// Bytes returned to client from cache
+	CachedBytes uint64 `json:"cachedBytes"`
+	// Requests served from cache
+	CachedRequests uint64                                                                                                                          `json:"cachedRequests"`
+	ContentTypeMap []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem `json:"contentTypeMap,omitempty"`
+	ClientSSLMap   []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumClientSSLMapZoneHttpRequests1hGroupsClientSSLMapElem     `json:"clientSSLMap,omitempty"`
+	CountryMap     []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem         `json:"countryMap,omitempty"`
+	// Bytes returned to client using SSL/TLS protocol
+	EncryptedBytes uint64 `json:"encryptedBytes"`
+	// Requests served using SSL/TLS protocol
+	EncryptedRequests uint64                                                                                                                  `json:"encryptedRequests"`
+	IpClassMap        []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumIpClassMapZoneHttpRequests1hGroupsIpClassMapElem `json:"ipClassMap,omitempty"`
+	// Successful requests for HTML content
+	PageViews         uint64                                                                                                                                `json:"pageViews"`
+	Requests          uint64                                                                                                                                `json:"requests"`
+	ResponseStatusMap []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumResponseStatusMapZoneHttpRequests1hGroupsResponseStatusMapElem `json:"responseStatusMap,omitempty"`
+	// Requests classified as threats
+	Threats          uint64                                                                                                                              `json:"threats"`
+	ThreatPathingMap []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumThreatPathingMapZoneHttpRequests1hGroupsThreatPathingMapElem `json:"threatPathingMap,omitempty"`
+}
+
+// GetBrowserMap returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.BrowserMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetBrowserMap() []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumBrowserMapZoneHttpRequests1hGroupsBrowserMapElem {
+	return v.BrowserMap
+}
+
+// GetBytes returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.Bytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetBytes() uint64 {
+	return v.Bytes
+}
+
+// GetCachedBytes returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.CachedBytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetCachedBytes() uint64 {
+	return v.CachedBytes
+}
+
+// GetCachedRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.CachedRequests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetCachedRequests() uint64 {
+	return v.CachedRequests
+}
+
+// GetContentTypeMap returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.ContentTypeMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetContentTypeMap() []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem {
+	return v.ContentTypeMap
+}
+
+// GetClientSSLMap returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.ClientSSLMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetClientSSLMap() []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumClientSSLMapZoneHttpRequests1hGroupsClientSSLMapElem {
+	return v.ClientSSLMap
+}
+
+// GetCountryMap returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.CountryMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetCountryMap() []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem {
+	return v.CountryMap
+}
+
+// GetEncryptedBytes returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.EncryptedBytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetEncryptedBytes() uint64 {
+	return v.EncryptedBytes
+}
+
+// GetEncryptedRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.EncryptedRequests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetEncryptedRequests() uint64 {
+	return v.EncryptedRequests
+}
+
+// GetIpClassMap returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.IpClassMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetIpClassMap() []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumIpClassMapZoneHttpRequests1hGroupsIpClassMapElem {
+	return v.IpClassMap
+}
+
+// GetPageViews returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.PageViews, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetPageViews() uint64 {
+	return v.PageViews
+}
+
+// GetRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetRequests() uint64 {
+	return v.Requests
+}
+
+// GetResponseStatusMap returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.ResponseStatusMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetResponseStatusMap() []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumResponseStatusMapZoneHttpRequests1hGroupsResponseStatusMapElem {
+	return v.ResponseStatusMap
+}
+
+// GetThreats returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.Threats, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetThreats() uint64 {
+	return v.Threats
+}
+
+// GetThreatPathingMap returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum.ThreatPathingMap, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSum) GetThreatPathingMap() []GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumThreatPathingMapZoneHttpRequests1hGroupsThreatPathingMapElem {
+	return v.ThreatPathingMap
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumBrowserMapZoneHttpRequests1hGroupsBrowserMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsBrowserMapElem.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumBrowserMapZoneHttpRequests1hGroupsBrowserMapElem struct {
+	// Successful requests for HTML content
+	PageViews uint64 `json:"pageViews"`
+	// Browser type
+	Key string `json:"key"`
+}
+
+// GetPageViews returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumBrowserMapZoneHttpRequests1hGroupsBrowserMapElem.PageViews, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumBrowserMapZoneHttpRequests1hGroupsBrowserMapElem) GetPageViews() uint64 {
+	return v.PageViews
+}
+
+// GetKey returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumBrowserMapZoneHttpRequests1hGroupsBrowserMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumBrowserMapZoneHttpRequests1hGroupsBrowserMapElem) GetKey() string {
+	return v.Key
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumClientSSLMapZoneHttpRequests1hGroupsClientSSLMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsClientSSLMapElem.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumClientSSLMapZoneHttpRequests1hGroupsClientSSLMapElem struct {
+	Requests uint64 `json:"requests"`
+	// Protocol version
+	Key string `json:"key"`
+}
+
+// GetRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumClientSSLMapZoneHttpRequests1hGroupsClientSSLMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumClientSSLMapZoneHttpRequests1hGroupsClientSSLMapElem) GetRequests() uint64 {
+	return v.Requests
+}
+
+// GetKey returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumClientSSLMapZoneHttpRequests1hGroupsClientSSLMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumClientSSLMapZoneHttpRequests1hGroupsClientSSLMapElem) GetKey() string {
+	return v.Key
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsContentTypeMapElem.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem struct {
+	// Bytes returned to client
+	Bytes    uint64 `json:"bytes"`
+	Requests uint64 `json:"requests"`
+	// Content type returned to client
+	Key string `json:"key"`
+}
+
+// GetBytes returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem.Bytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem) GetBytes() uint64 {
+	return v.Bytes
+}
+
+// GetRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem) GetRequests() uint64 {
+	return v.Requests
+}
+
+// GetKey returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumContentTypeMapZoneHttpRequests1hGroupsContentTypeMapElem) GetKey() string {
+	return v.Key
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsCountryMapElem.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem struct {
+	// Bytes returned to client
+	Bytes    uint64 `json:"bytes"`
+	Requests uint64 `json:"requests"`
+	// Requests classified as threats
+	Threats uint64 `json:"threats"`
+	// Country from which request originated
+	Key string `json:"key"`
+}
+
+// GetBytes returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem.Bytes, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem) GetBytes() uint64 {
+	return v.Bytes
+}
+
+// GetRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem) GetRequests() uint64 {
+	return v.Requests
+}
+
+// GetThreats returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem.Threats, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem) GetThreats() uint64 {
+	return v.Threats
+}
+
+// GetKey returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumCountryMapZoneHttpRequests1hGroupsCountryMapElem) GetKey() string {
+	return v.Key
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumIpClassMapZoneHttpRequests1hGroupsIpClassMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsIpClassMapElem.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumIpClassMapZoneHttpRequests1hGroupsIpClassMapElem struct {
+	Requests uint64 `json:"requests"`
+	// IP class
+	Key string `json:"key"`
+}
+
+// GetRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumIpClassMapZoneHttpRequests1hGroupsIpClassMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumIpClassMapZoneHttpRequests1hGroupsIpClassMapElem) GetRequests() uint64 {
+	return v.Requests
+}
+
+// GetKey returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumIpClassMapZoneHttpRequests1hGroupsIpClassMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumIpClassMapZoneHttpRequests1hGroupsIpClassMapElem) GetKey() string {
+	return v.Key
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumResponseStatusMapZoneHttpRequests1hGroupsResponseStatusMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsResponseStatusMapElem.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumResponseStatusMapZoneHttpRequests1hGroupsResponseStatusMapElem struct {
+	Requests uint64 `json:"requests"`
+	// HTTP response status code returned to client
+	Key uint64 `json:"key"`
+}
+
+// GetRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumResponseStatusMapZoneHttpRequests1hGroupsResponseStatusMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumResponseStatusMapZoneHttpRequests1hGroupsResponseStatusMapElem) GetRequests() uint64 {
+	return v.Requests
+}
+
+// GetKey returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumResponseStatusMapZoneHttpRequests1hGroupsResponseStatusMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumResponseStatusMapZoneHttpRequests1hGroupsResponseStatusMapElem) GetKey() uint64 {
+	return v.Key
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumThreatPathingMapZoneHttpRequests1hGroupsThreatPathingMapElem includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsThreatPathingMapElem.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumThreatPathingMapZoneHttpRequests1hGroupsThreatPathingMapElem struct {
+	Requests uint64 `json:"requests"`
+	// Threat type
+	Key string `json:"key"`
+}
+
+// GetRequests returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumThreatPathingMapZoneHttpRequests1hGroupsThreatPathingMapElem.Requests, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumThreatPathingMapZoneHttpRequests1hGroupsThreatPathingMapElem) GetRequests() uint64 {
+	return v.Requests
+}
+
+// GetKey returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumThreatPathingMapZoneHttpRequests1hGroupsThreatPathingMapElem.Key, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsSumThreatPathingMapZoneHttpRequests1hGroupsThreatPathingMapElem) GetKey() string {
+	return v.Key
+}
+
+// GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsUniq includes the requested fields of the GraphQL type ZoneHttpRequests1hGroupsUniq.
+type GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsUniq struct {
+	// A number of unique IPs
+	Uniques uint64 `json:"uniques"`
+}
+
+// GetUniques returns GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsUniq.Uniques, and is useful for accessing the field via an interface.
+func (v *GetZoneAnalyticsByHourViewerZonesZoneZonesZoneHttpRequests1hGroupsUniq) GetUniques() uint64 {
+	return v.Uniques
+}
+
+// __GetWorkerAnalyticsByHourInput is used internally by genqlient
+type __GetWorkerAnalyticsByHourInput struct {
 	ZoneTag  *string   `json:"zoneTag,omitempty"`
 	Datetime time.Time `json:"datetime"`
 }
 
-// GetZoneTag returns __GetWorkerAnalyticsInput.ZoneTag, and is useful for accessing the field via an interface.
-func (v *__GetWorkerAnalyticsInput) GetZoneTag() *string { return v.ZoneTag }
+// GetZoneTag returns __GetWorkerAnalyticsByHourInput.ZoneTag, and is useful for accessing the field via an interface.
+func (v *__GetWorkerAnalyticsByHourInput) GetZoneTag() *string { return v.ZoneTag }
 
-// GetDatetime returns __GetWorkerAnalyticsInput.Datetime, and is useful for accessing the field via an interface.
-func (v *__GetWorkerAnalyticsInput) GetDatetime() time.Time { return v.Datetime }
+// GetDatetime returns __GetWorkerAnalyticsByHourInput.Datetime, and is useful for accessing the field via an interface.
+func (v *__GetWorkerAnalyticsByHourInput) GetDatetime() time.Time { return v.Datetime }
 
-// __GetZoneAnalyticsInput is used internally by genqlient
-type __GetZoneAnalyticsInput struct {
+// __GetZoneAnalyticsByDayInput is used internally by genqlient
+type __GetZoneAnalyticsByDayInput struct {
 	ZoneTag *string `json:"zoneTag,omitempty"`
 	Since   string  `json:"since"`
 	Until   string  `json:"until"`
 }
 
-// GetZoneTag returns __GetZoneAnalyticsInput.ZoneTag, and is useful for accessing the field via an interface.
-func (v *__GetZoneAnalyticsInput) GetZoneTag() *string { return v.ZoneTag }
+// GetZoneTag returns __GetZoneAnalyticsByDayInput.ZoneTag, and is useful for accessing the field via an interface.
+func (v *__GetZoneAnalyticsByDayInput) GetZoneTag() *string { return v.ZoneTag }
 
-// GetSince returns __GetZoneAnalyticsInput.Since, and is useful for accessing the field via an interface.
-func (v *__GetZoneAnalyticsInput) GetSince() string { return v.Since }
+// GetSince returns __GetZoneAnalyticsByDayInput.Since, and is useful for accessing the field via an interface.
+func (v *__GetZoneAnalyticsByDayInput) GetSince() string { return v.Since }
 
-// GetUntil returns __GetZoneAnalyticsInput.Until, and is useful for accessing the field via an interface.
-func (v *__GetZoneAnalyticsInput) GetUntil() string { return v.Until }
+// GetUntil returns __GetZoneAnalyticsByDayInput.Until, and is useful for accessing the field via an interface.
+func (v *__GetZoneAnalyticsByDayInput) GetUntil() string { return v.Until }
 
-// The query or mutation executed by GetWorkerAnalytics.
-const GetWorkerAnalytics_Operation = `
-query GetWorkerAnalytics ($zoneTag: string, $datetime: Time!) {
+// __GetZoneAnalyticsByHourInput is used internally by genqlient
+type __GetZoneAnalyticsByHourInput struct {
+	ZoneTag *string    `json:"zoneTag,omitempty"`
+	Since   *time.Time `json:"since,omitempty"`
+	Until   *time.Time `json:"until,omitempty"`
+}
+
+// GetZoneTag returns __GetZoneAnalyticsByHourInput.ZoneTag, and is useful for accessing the field via an interface.
+func (v *__GetZoneAnalyticsByHourInput) GetZoneTag() *string { return v.ZoneTag }
+
+// GetSince returns __GetZoneAnalyticsByHourInput.Since, and is useful for accessing the field via an interface.
+func (v *__GetZoneAnalyticsByHourInput) GetSince() *time.Time { return v.Since }
+
+// GetUntil returns __GetZoneAnalyticsByHourInput.Until, and is useful for accessing the field via an interface.
+func (v *__GetZoneAnalyticsByHourInput) GetUntil() *time.Time { return v.Until }
+
+// The query or mutation executed by GetWorkerAnalyticsByHour.
+const GetWorkerAnalyticsByHour_Operation = `
+query GetWorkerAnalyticsByHour ($zoneTag: string, $datetime: Time!) {
 	viewer {
 		zones(filter: {zoneTag:$zoneTag}) {
 			subrequestsData: workersZoneSubrequestsAdaptiveGroups(limit: 10000, filter: {datetime_geq:$datetime}) {
@@ -674,23 +1049,23 @@ query GetWorkerAnalytics ($zoneTag: string, $datetime: Time!) {
 }
 `
 
-func GetWorkerAnalyticsQuery(
+func GetWorkerAnalyticsByHourQuery(
 	ctx_ context.Context,
 	client_ graphql.Client,
 	zoneTag *string,
 	datetime time.Time,
-) (*GetWorkerAnalyticsResponse, error) {
+) (*GetWorkerAnalyticsByHourResponse, error) {
 	req_ := &graphql.Request{
-		OpName: "GetWorkerAnalytics",
-		Query:  GetWorkerAnalytics_Operation,
-		Variables: &__GetWorkerAnalyticsInput{
+		OpName: "GetWorkerAnalyticsByHour",
+		Query:  GetWorkerAnalyticsByHour_Operation,
+		Variables: &__GetWorkerAnalyticsByHourInput{
 			ZoneTag:  zoneTag,
 			Datetime: datetime,
 		},
 	}
 	var err_ error
 
-	var data_ GetWorkerAnalyticsResponse
+	var data_ GetWorkerAnalyticsByHourResponse
 	resp_ := &graphql.Response{Data: &data_}
 
 	err_ = client_.MakeRequest(
@@ -702,9 +1077,9 @@ func GetWorkerAnalyticsQuery(
 	return &data_, err_
 }
 
-// The query or mutation executed by GetZoneAnalytics.
-const GetZoneAnalytics_Operation = `
-query GetZoneAnalytics ($zoneTag: string, $since: Date!, $until: Date!) {
+// The query or mutation executed by GetZoneAnalyticsByDay.
+const GetZoneAnalyticsByDay_Operation = `
+query GetZoneAnalyticsByDay ($zoneTag: string, $since: Date!, $until: Date!) {
 	viewer {
 		zones(filter: {zoneTag:$zoneTag}) {
 			totals: httpRequests1dGroups(limit: 10000, filter: {date_geq:$since,date_lt:$until}) {
@@ -766,17 +1141,17 @@ query GetZoneAnalytics ($zoneTag: string, $since: Date!, $until: Date!) {
 }
 `
 
-func GetZoneAnalyticsQuery(
+func GetZoneAnalyticsByDayQuery(
 	ctx_ context.Context,
 	client_ graphql.Client,
 	zoneTag *string,
 	since string,
 	until string,
-) (*GetZoneAnalyticsResponse, error) {
+) (*GetZoneAnalyticsByDayResponse, error) {
 	req_ := &graphql.Request{
-		OpName: "GetZoneAnalytics",
-		Query:  GetZoneAnalytics_Operation,
-		Variables: &__GetZoneAnalyticsInput{
+		OpName: "GetZoneAnalyticsByDay",
+		Query:  GetZoneAnalyticsByDay_Operation,
+		Variables: &__GetZoneAnalyticsByDayInput{
 			ZoneTag: zoneTag,
 			Since:   since,
 			Until:   until,
@@ -784,7 +1159,101 @@ func GetZoneAnalyticsQuery(
 	}
 	var err_ error
 
-	var data_ GetZoneAnalyticsResponse
+	var data_ GetZoneAnalyticsByDayResponse
+	resp_ := &graphql.Response{Data: &data_}
+
+	err_ = client_.MakeRequest(
+		ctx_,
+		req_,
+		resp_,
+	)
+
+	return &data_, err_
+}
+
+// The query or mutation executed by GetZoneAnalyticsByHour.
+const GetZoneAnalyticsByHour_Operation = `
+query GetZoneAnalyticsByHour ($zoneTag: string, $since: Time, $until: Time) {
+	viewer {
+		zones(filter: {zoneTag:$zoneTag}) {
+			totals: httpRequests1hGroups(limit: 10000, filter: {datetime_geq:$since,datetime_lt:$until}) {
+				uniq {
+					uniques
+				}
+			}
+			zones: httpRequests1hGroups(orderBy: [datetime_ASC], limit: 10000, filter: {datetime_geq:$since,datetime_lt:$until}) {
+				dimensions {
+					timeslot: datetime
+				}
+				uniq {
+					uniques
+				}
+				sum {
+					browserMap {
+						pageViews
+						key: uaBrowserFamily
+					}
+					bytes
+					cachedBytes
+					cachedRequests
+					contentTypeMap {
+						bytes
+						requests
+						key: edgeResponseContentTypeName
+					}
+					clientSSLMap {
+						requests
+						key: clientSSLProtocol
+					}
+					countryMap {
+						bytes
+						requests
+						threats
+						key: clientCountryName
+					}
+					encryptedBytes
+					encryptedRequests
+					ipClassMap {
+						requests
+						key: ipType
+					}
+					pageViews
+					requests
+					responseStatusMap {
+						requests
+						key: edgeResponseStatus
+					}
+					threats
+					threatPathingMap {
+						requests
+						key: threatPathingName
+					}
+				}
+			}
+		}
+	}
+}
+`
+
+func GetZoneAnalyticsByHourQuery(
+	ctx_ context.Context,
+	client_ graphql.Client,
+	zoneTag *string,
+	since *time.Time,
+	until *time.Time,
+) (*GetZoneAnalyticsByHourResponse, error) {
+	req_ := &graphql.Request{
+		OpName: "GetZoneAnalyticsByHour",
+		Query:  GetZoneAnalyticsByHour_Operation,
+		Variables: &__GetZoneAnalyticsByHourInput{
+			ZoneTag: zoneTag,
+			Since:   since,
+			Until:   until,
+		},
+	}
+	var err_ error
+
+	var data_ GetZoneAnalyticsByHourResponse
 	resp_ := &graphql.Response{Data: &data_}
 
 	err_ = client_.MakeRequest(

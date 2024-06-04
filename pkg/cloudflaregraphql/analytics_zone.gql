@@ -1,4 +1,4 @@
-query GetZoneAnalytics($zoneTag: string, $since: Date!, $until: Date!) {
+query GetZoneAnalyticsByDay($zoneTag: string, $since: Date!, $until: Date!) {
   viewer {
     zones(filter: { zoneTag: $zoneTag }) {
       totals: httpRequests1dGroups(
@@ -16,6 +16,74 @@ query GetZoneAnalytics($zoneTag: string, $since: Date!, $until: Date!) {
       ) {
         dimensions {
           timeslot: date
+        }
+        uniq {
+          uniques
+        }
+        sum {
+          browserMap {
+            pageViews
+            key: uaBrowserFamily
+          }
+          bytes
+          cachedBytes
+          cachedRequests
+          contentTypeMap {
+            bytes
+            requests
+            key: edgeResponseContentTypeName
+          }
+          clientSSLMap {
+            requests
+            key: clientSSLProtocol
+          }
+          countryMap {
+            bytes
+            requests
+            threats
+            key: clientCountryName
+          }
+          encryptedBytes
+          encryptedRequests
+          ipClassMap {
+            requests
+            key: ipType
+          }
+          pageViews
+          requests
+          responseStatusMap {
+            requests
+            key: edgeResponseStatus
+          }
+          threats
+          threatPathingMap {
+            requests
+            key: threatPathingName
+          }
+        }
+      }
+    }
+  }
+}
+
+query GetZoneAnalyticsByHour($zoneTag: string, $since: Time, $until: Time) {
+  viewer {
+    zones(filter: { zoneTag: $zoneTag }) {
+      totals: httpRequests1hGroups(
+        limit: 10000
+        filter: { datetime_geq: $since, datetime_lt: $until }
+      ) {
+        uniq {
+          uniques
+        }
+      }
+      zones: httpRequests1hGroups(
+        orderBy: [datetime_ASC]
+        limit: 10000
+        filter: { datetime_geq: $since, datetime_lt: $until }
+      ) {
+        dimensions {
+          timeslot: datetime
         }
         uniq {
           uniques

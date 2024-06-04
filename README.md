@@ -85,7 +85,7 @@ func main() {
 
         currentDate := time.Now().UTC().Format("2006-01-02")
         sinceDate := time.Now().UTC().AddDate(0, 0, -3).Format("2006-01-02")
-        result, err := client.GetZoneAnalyticsQuery(ctx, &zoneTag, sinceDate, currentDate)
+        result, err := client.GetZoneAnalyticsByDayQuery(ctx, &zoneTag, sinceDate, currentDate)
         if err != nil {
             log.Fatal(err)
         }
@@ -96,21 +96,11 @@ func main() {
             value := zoneResult.Sum.Requests
             log.Printf("Date: %s, Requests: %d\n", date, value)
         }
-
-        workerResult, err := client.GetWorkerAnalyticsQuery(ctx, &zoneTag, time.Now())
-        if err != nil {
-            log.Fatal(err)
-        }
-
-        log.Println("Worker Analytics Results:", zone.Name)
-        for _, workerResult := range workerResult.Viewer.Zones[0].TotalRequestsData {
-            time := workerResult.Dimensions.DatetimeHour
-            value := workerResult.Sum.Requests
-            log.Printf("Date: %s, Requests: %d\n", time, value)
-        }
     }
 }
 ```
+
+See [cmd/cfgo/cfgo.go](cmd/cfgo) for more complete examples
 
 ## Contributing
 
