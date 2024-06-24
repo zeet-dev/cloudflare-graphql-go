@@ -5,6 +5,7 @@ go 1.22.3
 require (
 	github.com/Khan/genqlient v0.7.0
 	github.com/cloudflare/cloudflare-go v0.96.0
+	github.com/samber/lo v1.39.0
 	github.com/zeet-dev/pkg v0.1.3
 	k8s.io/client-go v0.30.1
 )
@@ -20,7 +21,7 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
-	github.com/hashicorp/go-retryablehttp v0.7.6 // indirect
+	github.com/hashicorp/go-retryablehttp v0.7.7 // indirect
 	github.com/jinzhu/copier v0.4.0 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
@@ -29,7 +30,6 @@ require (
 	github.com/motemen/go-nuts v0.0.0-20220604134737-2658d0104f31 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/rs/zerolog v1.32.0 // indirect
-	github.com/samber/lo v1.39.0 // indirect
 	github.com/vektah/gqlparser/v2 v2.5.12 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.24.0 // indirect
